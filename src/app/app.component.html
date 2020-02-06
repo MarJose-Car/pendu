@@ -1,5 +1,14 @@
-<span *ngFor="let lettre of mot_a_afficher">{{lettre}}</span>
+<div *ngIf="message">
+  {{message}}
+</div>
+<div *ngIf="!message">
+  <span *ngFor="let lettre of mot_a_afficher">{{lettre}}</span><br><br>
+</div>
 <div>
   <input type="text" [(ngModel)]="proposition"/>
   <button (click)="verifier()">OK</button>
+  <p>Il vous reste {{essais}} essai(s)</p>
 </div>
+<ul>
+  <li> *ngFor ="let lettre of lettres_deja_vues" {{lettre}}</li>
+</ul>
